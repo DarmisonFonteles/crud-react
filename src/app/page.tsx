@@ -12,10 +12,22 @@ export default function Home() {
     new Cliente('Pedro', 54, '5'),
   ]
 
+  function clienteSelecionado(cliente: Cliente) {
+    console.log(cliente.nome)
+  }
+
+  function clienteExcluido(cliente: Cliente) {
+    console.log(cliente.nome)
+  }
+
   return (
     <div className={`flex h-screen justify-center items-center bg-gradient-to-r from-purple-500 to-blue-600 text-white`}>
       <Layout titulo="Cadastro Simples">
-        <Tabela clientes={clientes}></Tabela>
+        <Tabela 
+          clientes={clientes} 
+          clienteSelecionado={clienteSelecionado}
+          clienteExcluido={clienteExcluido}
+          />
       </Layout>
     </div>
   )
